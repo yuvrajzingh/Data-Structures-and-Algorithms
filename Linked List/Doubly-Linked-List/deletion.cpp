@@ -73,9 +73,10 @@ void insertAtTail(Node* &head, Node* &tail, int d){
 }
 
 
-void deletion(Node* &head, int index){
+void deletion(Node* &head, Node* &tail, int index){
+    Node* temp;
     if(index == 0){
-        Node* temp = head;
+        temp = head;
         temp->next->prev = NULL;
         head = temp->next;
         temp->next = NULL;
@@ -93,9 +94,14 @@ void deletion(Node* &head, int index){
             count++;
         }
 
+        if(curr->next==NULL){
+            tail = prev;
+        }
+
         curr->prev = NULL;
         prev->next = curr->next;
         curr->next = NULL;
+    
         delete curr;
     }
 }
@@ -123,7 +129,7 @@ int main(){
     getLength(head);
     cout<<endl;
 
-    deletion(head, 4);
+    deletion(head, tail, 4);
     print(head);
 
     cout<<"Head: "<<head->data<<endl;
