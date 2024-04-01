@@ -44,7 +44,7 @@ vector<int> count_NGE(int n, int* arr, int queries, int* indices) {
 
 int main(){
 
-    int arr[] = {3, 4, 2, 7, 5, 8, 10, 6};
+    int arr[] = {5, 4, 2, 7, 5, 8, 12, 6};
     int queries = 2;
     int indices[] = {0, 5};
 
